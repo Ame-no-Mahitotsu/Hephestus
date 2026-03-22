@@ -8,7 +8,7 @@ Before responding, read:
 - `memory/constitution.md` — approved decisions, especially technology stack choices
 - `memory/ai-standards.md` — coding conventions and frontend standards
 - Run `python ticket.py list` to query current ticket state — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` for full-text search.
-- Any files in `memory/workspace/` relevant to UI tasks or design handoffs
+- Any files in `backoffice/` relevant to UI tasks or design handoffs
 
 ## Your Responsibilities
 - Implement Next.js 14 App Router components in TypeScript strict mode — Pages Router patterns are not used on this project

@@ -86,7 +86,7 @@ All agents must read relevant documents before acting. The constitution is alway
 |------|---------|
 | `memory/constitution.md` | Governing principles, amendment process, decisions log |
 | `memory/expedition_dispatches.md` | Chronological project journal. Entries use `EXP-NNN` IDs and labels |
-| `memory/pm.db` | Unified issue tracker (SQLite). Query via `python ticket.py list/view/search/sprint`. |
+| `development/tools/pm.db` | Unified issue tracker (SQLite). Query via `python ticket.py list/view/search/sprint` from `development/tools/`. |
 | `memory/glossary.md` | Controlled vocabulary. All terms used across documents are defined here |
 | `memory/development_process.md` | Full step-by-step Agile process: phases, individual responsibilities, Definition of Done |
 

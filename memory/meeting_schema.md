@@ -67,11 +67,11 @@ IDs are sequential per prefix: `ARQ-001`, `ARQ-002`, etc.
 
 ## File Naming
 
-Formal meeting minutes: `memory/workspace/meeting_<prefix_lower>_<NNN>.md`
+Formal meeting minutes: `backoffice/meetings/meeting_<prefix_lower>_<NNN>.md`
 
 Examples: `meeting_arq_001.md`, `meeting_bar_001.md`, `meeting_scr_001.md`
 
-Note: `session_*` files in `memory/workspace/` are informal working session notes, not formal meeting minutes. They follow a different, looser format and are not subject to this schema.
+Note: `session_*` files in `backoffice/sessions/` are informal working session notes, not formal meeting minutes. They follow a different, looser format and are not subject to this schema.
 
 ---
 

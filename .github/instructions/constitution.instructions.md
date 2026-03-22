@@ -27,7 +27,7 @@ applyTo: "**"
 
 ## Process Invariants — No Exceptions
 
-1. **No ticket = no work.** Nothing is built without a ticket in the PM database (`memory/pm.db`).
+1. **No ticket = no work.** Nothing is built without a ticket in the PM database (`development/tools/pm.db`).
 2. **TDD always.** Write a failing test before writing any code.
 3. **Two reviews before merge.** Tech Lead (G5) + domain specialist (G6), independently.
 4. **Owner final authority.** G7 Step 1 = PO acceptance. G7 Step 2 = Owner sign-off. No ticket is `resolved` without Owner sign-off.
@@ -36,10 +36,10 @@ applyTo: "**"
 
 ## Ticket Management
 
-- Create and update tickets via `ticket.py` CLI only — **never manipulate `memory/pm.db` directly**
+- Create and update tickets via `ticket.py` CLI only — **never manipulate `development/tools/pm.db` directly**
 - `python ticket.py create --type --component --title --urgency --project [--sprint] [--tags] [--owner] [--notes]`
 - `python ticket.py update --id --field --value --note --caller`
-- Controlled fields defined in `tools/pm/ticket_schema.py`
+- Controlled fields defined in `pm/ticket_schema.py`
 
 ## Amendment Rule
 

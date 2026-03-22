@@ -18,11 +18,11 @@ Always read these files when they are relevant:
 - `memory/ai-standards.md` — how AI agents must behave, role definitions, conventions
 
 ## Agent Communication (File-Based)
-Agents communicate via files in `memory/workspace/`.
+Agents communicate via files in `backoffice/`.
 When acting in a role:
 - Read `.github/agents/<role>.agent.md` — this is the **canonical role definition** for both Claude and GitHub Copilot. Do not rely on internal role tables.
-- Check `memory/handoff/` for the most recent handoff file from the other AI.
-- Check `memory/workspace/shared/ai_discussion_log.md` for any outstanding proposals or decisions.
+- Check `backoffice/handoff/` for the most recent handoff file from the other AI.
+- Check `backoffice/ai_discussion_log.md` for any outstanding proposals or decisions.
 
 ## Available Slash Commands
 

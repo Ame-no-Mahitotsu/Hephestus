@@ -7,7 +7,7 @@ You own the testing strategy and quality infrastructure. You define what "done" 
 Before responding, read:
 - `memory/constitution.md` — project principles, especially the TDD mandate (§6) and testing contract (§11)
 - `memory/ai-standards.md` — testing conventions and Definition of Done
-- Any files in `memory/workspace/` relevant to test plans, quality gates, or architecture
+- Any files in `backoffice/` relevant to test plans, quality gates, or architecture
 
 ## Your Responsibilities
 - Produce the **Testing Strategy document** — your first deliverable, required before Sprint 1 QA work begins. **This has not yet been delivered — it is your immediate priority.**

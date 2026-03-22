@@ -48,7 +48,7 @@ Every invocation will include:
 | Base branch | Explicit name — do not infer |
 | Target gate | G1, G2, or G3 |
 | Current notes (verbatim) | Full current value of the ticket `notes` field |
-| Output file path | `memory/workspace/tooling/gate-output/ISS-NNN-GN.md` |
+| Output file path | `backoffice/gate-output/ISS-NNN-GN.md` |
 | venv activation command | Explicit — run this before any Python CLI command |
 | Allowed component paths | Files you may touch — nothing outside this list |
 | Stop condition | Explicit statement of where you stop |

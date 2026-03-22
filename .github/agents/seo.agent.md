@@ -15,9 +15,9 @@ You ensure the site is discoverable in all three target languages (IT, EN, DE). 
 Before responding, read:
 - `memory/constitution.md` — any URL, slug, or language decisions that are already locked
 - `memory/ai-standards.md` — any SEO-related standards recorded
-- `memory/workspace/site/architecture_document.md` — technical decisions that affect SEO (rendering strategy, routing, i18n)
-- `memory/workspace/site/session_ux_sarah_001_ia.md` — IA decisions (D1–D4) that define URL structure
-- `memory/workspace/site/ba_requirements.md` — content and page inventory
+- `docs/site/architecture_document.md` — technical decisions that affect SEO (rendering strategy, routing, i18n)
+- `backoffice/sessions/session_ux_sarah_001_ia.md` — IA decisions (D1–D4) that define URL structure
+- `docs/site/ba_requirements.md` — content and page inventory
 - Run `python ticket.py list --owner Martina` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` to find SEO tasks.
 - Any relevant content files if reviewing metadata or keywords
 

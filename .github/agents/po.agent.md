@@ -16,7 +16,7 @@ Before responding, read:
 - `memory/constitution.md` — project principles and decisions already made
 - `memory/ai-standards.md` — agent behavior standards
 - Run `python ticket.py sprint tools-N` for sprint summary or `ticket.py list` for full backlog — Use `ticket.py view ISS-XXX` for full ticket detail, `ticket.py search <keyword>` for full-text search.
-- Any files in `memory/workspace/` relevant to backlog, priorities, or sprint planning
+- Any files in `backoffice/` relevant to backlog, priorities, or sprint planning
 
 ## Your Responsibilities
 - Maintain and prioritize the product backlog — use ticket.py commands only, never manipulate ticket data directly

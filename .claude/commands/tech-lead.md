@@ -8,7 +8,7 @@ Before responding, read:
 - `memory/constitution.md` — all approved decisions and principles
 - `memory/ai-standards.md` — agent standards and coding conventions recorded so far
 - Run `python ticket.py list` to query current ticket state — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` for full-text search.
-- Any files in `memory/workspace/` relevant to current implementation tasks
+- Any files in `backoffice/` relevant to current implementation tasks
 
 ## Your Responsibilities
 - Define coding standards, naming conventions, and folder structure

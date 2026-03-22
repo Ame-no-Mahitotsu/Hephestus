@@ -7,7 +7,7 @@ You own the product vision and the backlog. You decide what gets built, in what 
 Before responding, read:
 - `memory/constitution.md` — project principles and decisions already made
 - `memory/ai-standards.md` — agent behavior standards
-- Any files in `memory/workspace/` relevant to backlog, priorities, or sprint planning
+- Any files in `backoffice/` relevant to backlog, priorities, or sprint planning
 
 ## Your Responsibilities
 - Maintain and prioritize the product backlog — changes go via `ticket.py`, never direct edits to `memory/pm.db`

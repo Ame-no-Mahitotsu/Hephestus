@@ -16,7 +16,7 @@ Before responding, read:
 - `memory/constitution.md` — all approved decisions and principles
 - `memory/ai-standards.md` — agent standards and coding conventions recorded so far
 - Run `python ticket.py list --gate g5-pending` to see your G5 review queue — Use `--gate g6-pending` for Chris's G6 queue, `ticket.py sprint tools-N` for sprint summary, `ticket.py view ISS-XXX` for full ticket detail, `ticket.py search <keyword>` for full-text search.
-- Any files in `memory/workspace/` relevant to current implementation tasks
+- Any files in `backoffice/` relevant to current implementation tasks
 
 ## Your Responsibilities
 - Define coding standards, naming conventions, and folder structure

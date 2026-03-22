@@ -38,7 +38,7 @@ AI agents **must not**:
 
 ### Ticket Creation Rules
 - When creating a ticket, always use `ticket.py create` — never manipulate `memory/pm.db` directly
-- Controlled fields (Type, Status, Urgency, Severity, Component, Project) must use values defined in `tools/pm/ticket_schema.py`
+- Controlled fields (Type, Status, Urgency, Severity, Component, Project) must use values defined in `pm/ticket_schema.py`
 - If no valid enum value fits, **stop and request a schema extension** from the project owner — do not invent new values
 - Owner, Tags, and Sprint are free-text — use sensible values consistent with existing tickets
 - Severity is required for `type=defect`; use `—` for all other types
@@ -94,19 +94,25 @@ AI agents **must not**:
 ---
 
 ## Repository and Branching
-> Approved 2026-03-13. See workspace/site/sessions/session_techlead_alessandro_002_standards.md.
+> Approved 2026-03-13. See backoffice/sessions/session_techlead_alessandro_002_standards.md.
 
 ### Repository structure
 ```
 c:\temp\ClaudeProjects\
 ├── repos\
-│   ├── SitoPresepi2.git\     ← bare repo — site code (SitoPresepi2-src working clone)
-│   └── SitoPresepi2-pm.git\  ← bare repo — PM/tooling (SitoPresepi2 working clone) [ISS-036]
-├── SitoPresepi2\             ← project management (constitution, memory, AI standards) — versioned
-└── SitoPresepi2-src\         ← working clone — all site code written here
+│   ├── SitoPresepi2.git\     ← bare repo — legacy (origin for hephestus)
+│   └── SitoPresepi2-pm.git\  ← bare repo — legacy PM/tooling [ISS-036]
+├── hephestus\                ← governance repo (constitution, memory, AI standards, agent files) → Fex329/Hephestus
+├── development\
+│   ├── tools\                ← PM tooling repo (pm/, ticket.py, pm.db) → Fex329/Tools
+│   ├── presepi-site\         ← site code working clone → Fex329/SitoPresepe
+│   └── worktrees\            ← ephemeral agent worktrees (gitignored)
+├── docs\                     ← documentation repo → Fex329/Docs
+├── backoffice\               ← operational files repo (sessions, ceremonies, gate output) → Fex329/Backoffice
+└── SitoPresepi2\             ← legacy monorepo (archived after ISS-141)
 ```
 
-### Branch model — SitoPresepi2-src (site code)
+### Branch model — development/presepi-site (site code)
 ```
 main        Production only. Tagged on every deployment.
 develop     Integration branch. Tests must always be green here.
@@ -114,7 +120,7 @@ feature/*   Branched from develop. Merged to develop via PR.
 hotfix/*    Branched from main. Merged to main AND develop.
 ```
 
-### Branch model — SitoPresepi2 (PM/tooling) [ISS-036, 2026-03-16]
+### Branch model — hephestus + development/tools (governance and PM/tooling) [ISS-036, 2026-03-16]
 ```
 main        Stable governance and tooling. Direct commits permitted for trivial fixes.
 feature/*   Branched from main. Merged to main via PR for any non-trivial change.
@@ -128,14 +134,14 @@ Upgrade to full GitFlow (add `develop`) if parallel PM work requires it.
 
 ---
 
-## tools/pm Package Conventions
-> Established ISS-016 / TASK-A, 2026-03-14.
+## pm Package Conventions
+> Established ISS-016 / TASK-A, 2026-03-14. Path updated ISS-138 reorg-1.
 
-The `tools/pm/` package is the sole home for project management logic. CLI scripts at `SitoPresepi2/` root call `pm` functions — they do not contain logic themselves.
+The `pm/` package (at `development/tools/pm/`) is the sole home for project management logic. CLI scripts at `development/tools/` root call `pm` functions — they do not contain logic themselves.
 
 ### Structure
 ```
-tools/pm/
+pm/
 ├── __init__.py           # re-exports all public names
 ├── protocols.py          # BacklogReader + BacklogWriter + MessageWriter Protocols
 ├── md_reader.py          # MarkdownBacklogReader — markdown implementation of BacklogReader
@@ -146,18 +152,18 @@ tools/pm/
 
 ### Import convention
 ```python
-from tools.pm import BacklogReader, BacklogWriter              # Protocols via __init__
-from tools.pm import MarkdownBacklogReader, MarkdownBacklogWriter  # concrete classes via __init__
-from tools.pm.protocols import BacklogReader                   # direct module import (also valid)
-from tools.pm.md_reader import MarkdownBacklogReader           # direct module import (also valid)
+from pm import BacklogReader, BacklogWriter              # Protocols via __init__
+from pm import MarkdownBacklogReader, MarkdownBacklogWriter  # concrete classes via __init__
+from pm.protocols import BacklogReader                   # direct module import (also valid)
+from pm.md_reader import MarkdownBacklogReader           # direct module import (also valid)
 ```
 
 ### Rules
-- `tools/pm/` is pure Python — no Django, no database, no HTTP
-- CLI scripts (`ticket.py`, etc.) at the project root call `pm` functions — never the reverse
-- Every public function in `tools/pm/` must have at least one test in `tools/tests/`
-- `tools/tests/` mirrors `tools/pm/` — one test file per module: `test_md_reader.py`, `test_md_writer.py`, `test_md_message_writer.py`
-- Pre-existing scripts (`tools/dispatch_reader.py`, `tools/issue_reader.py`) are excluded from coverage until their own tickets are raised
+- `pm/` is pure Python — no Django, no database, no HTTP
+- CLI scripts (`ticket.py`, etc.) at `development/tools/` root call `pm` functions — never the reverse
+- Every public function in `pm/` must have at least one test in `tests/`
+- `tests/` mirrors `pm/` — one test file per module: `test_md_reader.py`, `test_md_writer.py`, `test_md_message_writer.py`
+- Pre-existing scripts (`dispatch_reader.py`, `issue_reader.py`) are excluded from coverage until their own tickets are raised
 
 ---
 
@@ -215,10 +221,10 @@ Both Backend and Frontend agents are responsible for keeping them in sync.
 
 ### venv — mandatory for all Python commands
 
-The tooling track uses a venv at `SitoPresepi2/.venv`. **All agents must activate it before running any Python command in the terminal.** This applies to every agent, every session — do not assume it is already active.
+The tooling track uses a venv at `development/tools/.venv`. **All agents must activate it before running any Python command in the terminal.** This applies to every agent, every session — do not assume it is already active.
 
 ```bash
-# Activate (Git Bash / Unix shell)
+# Activate (Git Bash / Unix shell) — from development/tools/
 source .venv/Scripts/activate
 
 # Verify

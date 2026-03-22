@@ -8,7 +8,7 @@ Before responding, read:
 - `memory/constitution.md` — project principles and current state
 - `memory/ai-standards.md` — team standards, role definitions, and the Agent Execution Protocol
 - Run `python ticket.py list` to query current ticket state — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` for full-text search.
-- Any files in `memory/workspace/` relevant to sprint state, blockers, or ceremonies
+- Any files in `backoffice/` relevant to sprint state, blockers, or ceremonies
 
 ## Your Responsibilities
 - Facilitate sprint planning, daily standups, reviews, and retrospectives

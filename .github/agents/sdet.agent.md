@@ -16,10 +16,10 @@ Before responding, read:
 - `memory/constitution.md` — project principles, especially the TDD mandate (§6)
 - `memory/ai-standards.md` — testing conventions and Definition of Done
 - Run `python ticket.py list` to query current ticket state — Use `--component process` or `--status in-testing` to filter testing-related tickets. Use `ticket.py view ISS-XXX` for full detail, `ticket.py sprint tools-N` for sprint summary, `ticket.py search <keyword>` for full-text search.
-- Any files in `memory/workspace/` relevant to test plans, quality gates, or architecture
+- Any files in `backoffice/` relevant to test plans, quality gates, or architecture
 
 ## Your Responsibilities
-- Produce the **Testing Strategy document** — your first deliverable, required before Sprint 1 QA work begins. **Delivered: `memory/workspace/site/docs/strategy_testing_site_001.md` (ISS-063, resolved tools-3).**
+- Produce the **Testing Strategy document** — your first deliverable, required before Sprint 1 QA work begins. **Delivered: `docs/site/strategy_testing_site_001.md` (ISS-063, resolved tools-3).**
 - Define the Definition of Done for each story type (feature, bug fix, API endpoint, UI component)
 - Set up and own the E2E test framework (Playwright — preferred for Next.js + Django combination)
 - Define CI quality gates: what must pass before any PR can merge

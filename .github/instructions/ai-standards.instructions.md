@@ -67,12 +67,12 @@ Each gate transition recorded in ticket notes: `YYYY-MM-DD <role>: [GATE N] <sum
 - Django: `@pytest.mark.django_db`, fixtures in `conftest.py`
 - Next.js: co-located test files (`Component.test.tsx`)
 
-## tools/pm Package
+## pm Package
 
-- `tools/pm/` is pure Python — no Django, no database, no HTTP
+- `pm/` (at `development/tools/pm/`) is pure Python — no Django, no database, no HTTP
 - `protocols.py` (BacklogReader + BacklogWriter + MessageWriter), `md_reader.py`, `md_writer.py`, `md_message_writer.py`, `ticket_schema.py`
-- CLI scripts at project root call `pm` functions — never the reverse
-- Every public function must have at least one test in `tools/tests/`
+- CLI scripts at `development/tools/` root call `pm` functions — never the reverse
+- Every public function must have at least one test in `tests/`
 
 ## Repository and Branching
 

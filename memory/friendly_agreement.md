@@ -1,6 +1,6 @@
 # Friendly Agreement — AI Handoff Protocol
 > Version: 2.0 | Updated: 2026-03-16 | Scope: All AI agents working in SitoPresepi2
-> Discussion history → `memory/workspace/shared/ai_discussion_log.md`
+> Discussion history → `backoffice/ai_discussion_log.md`
 
 ---
 
@@ -31,9 +31,9 @@
 |---|---|---|
 | Constitution | `memory/constitution.md` | Every session |
 | AI Standards | `memory/ai-standards.md` | Every session |
-| Issue Tracker | `memory/pm.db` (SQLite) | Before any ticket work — query via `python ticket.py list` |
-| Latest handoff | `memory/handoff/YYYY-MM-DD.md` (most recent) | Every session |
-| Architecture | `memory/workspace/site/architecture_document.md` | Before backend/devops work |
+| Issue Tracker | `development/tools/pm.db` (SQLite) | Before any ticket work — query via `python ticket.py list` from `development/tools/` |
+| Latest handoff | `backoffice/handoff/YYYY-MM-DD.md` (most recent) | Every session |
+| Architecture | `docs/site/architecture_document.md` | Before backend/devops work |
 | Agent Permissions | `memory/agent_permissions.md` | Before modifying `.vscode/settings.json` or adding any auto-approve rule |
 
 **Role definitions:** `.github/agents/*.agent.md` is the canonical source for both AIs. Read the relevant agent file when a role is invoked — do not rely on internal role tables.

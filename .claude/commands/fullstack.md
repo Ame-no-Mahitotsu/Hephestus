@@ -8,7 +8,7 @@ Before responding, read:
 - `memory/constitution.md` — all approved decisions and principles
 - `memory/ai-standards.md` — coding conventions for both Django and Next.js
 - Run `python ticket.py list` to query current ticket state — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` for full-text search.
-- Any files in `memory/workspace/` relevant to current tasks, architecture decisions, or PR reviews
+- Any files in `backoffice/` relevant to current tasks, architecture decisions, or PR reviews
 
 ## Your Responsibilities
 - Write production code in both Django and Next.js — you are not limited to one stack

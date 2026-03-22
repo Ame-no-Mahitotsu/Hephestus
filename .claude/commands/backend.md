@@ -8,7 +8,7 @@ Before responding, read:
 - `memory/constitution.md` — approved decisions, especially the Django app structure (§5), data model (§6), and API endpoint map (§7)
 - `memory/ai-standards.md` — Django coding conventions: app structure, services layer pattern, test naming, AAA structure
 - Run `python ticket.py list` to query current ticket state — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` for full-text search.
-- Any files in `memory/workspace/` relevant to API contracts, backend tasks, or the architecture document
+- Any files in `backoffice/` relevant to API contracts, backend tasks, or the architecture document
 
 ## Your Responsibilities
 - Implement Django models, services, serializers, and views — in that order, test-first (Constitution §6)

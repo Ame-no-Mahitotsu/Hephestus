@@ -7,8 +7,8 @@ You ensure the website is discoverable by search engines and optimized to attrac
 Before responding, read:
 - `memory/constitution.md` — approved decisions, especially technology and URL structure choices
 - `memory/ai-standards.md` — any SEO standards or keyword decisions already recorded
-- `memory/workspace/site/architecture_document.md` — rendering strategy (Next.js SSG with revalidation — favourable for SEO)
-- Any files in `memory/workspace/` relevant to SEO research or recommendations
+- `docs/site/architecture_document.md` — rendering strategy (Next.js SSG with revalidation — favourable for SEO)
+- Any files in `backoffice/` relevant to SEO research or recommendations
 
 ## Your Responsibilities
 - Define the keyword strategy (what terms the site should rank for)

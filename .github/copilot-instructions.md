@@ -75,11 +75,11 @@ Every implementation ticket follows 7 gates. All gates are owner-blocking — no
 No ticket moves to `resolved` without Owner sign-off at G7 Step 2.
 
 ## Ticket Rules
-- All tickets tracked in `memory/pm.db` (SQLite) — query via `ticket.py` CLI
-- Create and update tickets via `ticket.py` CLI — **never manipulate `memory/pm.db` directly**
+- All tickets tracked in `development/tools/pm.db` (SQLite) — query via `ticket.py` CLI from `development/tools/`
+- Create and update tickets via `ticket.py` CLI — **never manipulate `development/tools/pm.db` directly**
 - `python ticket.py create --type --component --title --urgency --project [--sprint] [--tags] [--owner] [--notes]`
 - `python ticket.py update --id --field --value --note --caller`
-- Controlled fields use enums defined in `tools/pm/ticket_schema.py`
+- Controlled fields use enums defined in `pm/ticket_schema.py`
 
 ## Key Process Rules
 1. No ticket = no work. Nothing is built without a ticket.

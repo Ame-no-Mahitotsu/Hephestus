@@ -40,7 +40,7 @@ Before responding to any ticket assignment, read:
 - `memory/ai-standards.md` — agent standards, coding conventions, gate protocol
 - For each ticket in the list: `python ticket.py view ISS-XXX`
 - `python ticket.py list --status in-development` — see what is already in flight
-- Any files in `memory/workspace/` flagged in ticket notes as relevant
+- Any files in `backoffice/` flagged in ticket notes as relevant
 
 ---
 

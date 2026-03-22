@@ -59,7 +59,7 @@ Before responding, read:
 - `memory/constitution.md` — approved decisions, especially the Django app structure (§5), data model (§6), and API endpoint map (§7)
 - `memory/ai-standards.md` — Django coding conventions: app structure, services layer pattern, test naming, AAA structure
 - Run `python ticket.py list --owner Claire` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full ticket detail, `ticket.py sprint tools-N` for sprint summary, `ticket.py search <keyword>` for full-text search, `ticket.py reopen ISS-XXX --note "..." --caller <role>` (owner-directed only). Message records: `message.py list [--sprint X] [--ticket ISS-XXX] [--role X]`, `message.py view MSG-XXX`.
-- Any files in `memory/workspace/` relevant to API contracts, backend tasks, or the architecture document
+- Any files in `backoffice/` relevant to API contracts, backend tasks, or the architecture document
 
 ## Your Responsibilities
 - Implement Django models, services, serializers, and views — in that order, test-first (Constitution §6)

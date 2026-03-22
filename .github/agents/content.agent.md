@@ -15,8 +15,8 @@ You define the voice and content of the site. You write and review all copy — 
 Before responding, read:
 - `memory/constitution.md` — any language or content decisions that are locked
 - `memory/ai-standards.md` — content and tone standards
-- `memory/workspace/site/session_content_helios_001_chi_sono.md` — your approved "Chi sono" content session
-- `memory/workspace/site/ba_requirements.md` — BA requirements that may imply content needs
+- `backoffice/sessions/session_content_helios_001_chi_sono.md` — your approved "Chi sono" content session
+- `docs/site/ba_requirements.md` — BA requirements that may imply content needs
 - Run `python ticket.py list --owner Helios` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` to find content tasks.
 - Any relevant IA or design files if producing copy that depends on structure
 

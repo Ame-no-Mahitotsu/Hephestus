@@ -109,7 +109,7 @@ Arale evaluates **evidence**, not work. The implementer subagent is a different 
 | **G2** | Paste of `pytest` output is genuinely red; test count matches G1 plan | Red output confirmed | Tests pass (should be red); count mismatch |
 | **G3** | Paste of `pytest` output is green; all tests pass; no pre-commit hook failure; coverage at or above threshold | All checks pass | Any hook failure; coverage drop; `--no-verify` used |
 
-**G5, G6, G7 are never evaluated by Arale.** Arale's terminal action is writing `in-testing` to `pm.db` and the routing note to `memory/workspace/`.
+**G5, G6, G7 are never evaluated by Arale.** Arale's terminal action is writing `in-testing` to `pm.db` and the routing note to `backoffice/`.
 
 ### Arale's gate note format
 Every gate transition must be recorded in `pm.db` via `ticket.py`:
@@ -142,14 +142,14 @@ Each subagent invocation must be **cold-start complete** — the subagent has no
 | Base branch name (explicit) | Briefing ticket row (derived from ticket `Project` field, not briefing prose) | Track-dependent |
 | Target gate: "You are performing G1 / G2 / G3" | Arale determines from current status | Cannot be inferred if prior run crashed |
 | Current notes field (verbatim) | `ticket.py view` output | Cumulative notes — overwrite destroys gate history |
-| Per-ticket output file path | `memory/workspace/tooling/gate-output/ISS-NNN-GN.md` | Parallel subagents must not write to shared file |
+| Per-ticket output file path | `backoffice/gate-output/ISS-NNN-GN.md` | Parallel subagents must not write to shared file |
 | venv activation instruction | Briefing YAML `venv_path` field | Different per track — wrong runtime = silent failure |
 | Allowed component paths | Derived from ticket `Component` field | Dominick security requirement |
 | Explicit stop condition | Always: "Stop after writing G[N] output. Do not proceed to G[N+1]." | Hard boundary |
 
 ### Base branch derivation rule
-- `project: tooling` → base branch is `main` (SitoPresepi2 repo)
-- `project: site` → base branch is `develop` (SitoPresepi2-src repo)
+- `project: tooling` → base branch is `main` (hephestus repo)
+- `project: site` → base branch is `develop` (development/presepi-site repo)
 - If `Project` field is ambiguous → **INTERRUPTED**. Do not use briefing prose to infer base branch.
 
 ### `--no-verify` prohibition
@@ -171,7 +171,7 @@ python ticket.py update ISS-NNN --field status --value in-testing \
   --note "<existing notes> | YYYY-MM-DD Arale: [G3 VERIFIED] Tests green. Coverage: X%. Advancing to in-testing. Routed to Alessandro for G5."
 ```
 
-2. **Write G5 routing note** to `memory/workspace/tooling/g5-queue/ISS-NNN-routing.md`:
+2. **Write G5 routing note** to `backoffice/g5-queue/ISS-NNN-routing.md`:
 ```markdown
 ---
 ticket: ISS-NNN
@@ -198,7 +198,7 @@ Pre-commit hooks passed. Tests green. Coverage: X%.
 
 The batch is complete when **all** of the following are true:
 - Every ticket assigned in the briefing has `status: in-testing` in `pm.db`
-- Every ticket has a routing note in `memory/workspace/tooling/g5-queue/`
+- Every ticket has a routing note in `backoffice/g5-queue/`
 - Every ticket's `pm.db` notes field includes a `[G3 VERIFIED]` entry from Arale
 - No ticket has `batch_claim` set without a corresponding `in-testing` status
 
@@ -208,7 +208,7 @@ When all conditions are met, proceed to Terminal Report.
 
 ## Terminal Report
 
-1. **Write session file** to `memory/workspace/tooling/`:
+1. **Write session file** to `backoffice/`:
    - Filename: `session_operation-manager_arale_NNN_batch-report.md`
    - Use the standard session file header (see `ai-standards.md` Session File Standard)
    - Body: table of all tickets with final status, gate reached, branch name, routing note path
@@ -252,7 +252,7 @@ When Arale sets `run_status: INTERRUPTED`:
 
 ## Briefing Schema
 
-Briefings are produced by Rob at sprint planning and committed to `memory/workspace/tooling/` before Arale starts. Arale reads them — it never creates them.
+Briefings are produced by Rob at sprint planning and committed to `backoffice/` before Arale starts. Arale reads them — it never creates them.
 
 ### YAML frontmatter
 
@@ -267,7 +267,7 @@ last_updated: YYYY-MM-DDTHH:MM:SS
 last_updated_by: —
 run_status: READY        # READY | IN-PROGRESS | COMPLETED | INTERRUPTED
 interrupted_reason: —    # populated only on INTERRUPTED
-venv_path: SitoPresepi2/.venv/Scripts/activate
+venv_path: development/tools/.venv/Scripts/activate
 ---
 ```
 

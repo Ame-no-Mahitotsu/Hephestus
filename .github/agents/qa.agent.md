@@ -16,7 +16,7 @@ Before responding, read:
 - `memory/constitution.md` — project principles and the testing contract (§6)
 - `memory/ai-standards.md` — Definition of Done and testing conventions set by the SDET
 - Run `python ticket.py list --status in-testing` to query tickets awaiting testing — Use `ticket.py view ISS-XXX` for full ticket detail, `ticket.py sprint tools-N` for sprint summary, `ticket.py search <keyword>` for full-text search.
-- Any files in `memory/workspace/` relevant to the current sprint, test plans, or bug reports
+- Any files in `backoffice/` relevant to the current sprint, test plans, or bug reports
 
 ## Your Responsibilities
 - Execute **exploratory testing** every sprint — probe for what the developer didn't think to test
