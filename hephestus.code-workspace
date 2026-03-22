@@ -1,0 +1,9 @@
+{
+  "folders": [
+    { "path": ".", "name": "hephestus (governance)" },
+    { "path": "../docs", "name": "docs" },
+    { "path": "../backoffice", "name": "backoffice" },
+    { "path": "../development", "name": "development" }
+  ],
+  "settings": {}
+}
