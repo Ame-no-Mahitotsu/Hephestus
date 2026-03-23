@@ -94,23 +94,23 @@ AI agents **must not**:
 ---
 
 ## Repository and Branching
-> Approved 2026-03-13. See backoffice/sessions/session_techlead_alessandro_002_standards.md.
+> Approved 2026-03-13. Updated 2026-03-23 — all repos migrated to GitHub as part of reorg-1 (ISS-129–ISS-141).
 
 ### Repository structure
 ```
 c:\temp\ClaudeProjects\
-├── repos\
-│   ├── SitoPresepi2.git\     ← bare repo — legacy (origin for hephestus)
-│   └── SitoPresepi2-pm.git\  ← bare repo — legacy PM/tooling [ISS-036]
-├── hephestus\                ← governance repo (constitution, memory, AI standards, agent files) → Fex329/Hephestus
+├── repos\                    ← legacy bare repos (archived — no longer origin for any repo)
+├── hephestus\                ← governance repo → github.com/Fex329/Hephestus  (origin)
 ├── development\
-│   ├── tools\                ← PM tooling repo (pm/, ticket.py, pm.db) → Fex329/Tools
-│   ├── presepi-site\         ← site code working clone → Fex329/SitoPresepe
+│   ├── tools\                ← PM tooling repo  → github.com/Fex329/Tools      (origin)
+│   ├── presepi-site\         ← site code        → github.com/Fex329/SitoPresepe (origin)
 │   └── worktrees\            ← ephemeral agent worktrees (gitignored)
-├── docs\                     ← documentation repo → Fex329/Docs
-├── backoffice\               ← operational files repo (sessions, ceremonies, gate output) → Fex329/Backoffice
+├── docs\                     ← documentation    → github.com/Fex329/Docs        (origin)
+├── backoffice\               ← operational files → github.com/Fex329/Backoffice (origin)
 └── SitoPresepi2\             ← legacy monorepo (archived after ISS-141)
 ```
+
+All 5 repos use `origin` pointing to GitHub (SSH). The `repos\` bare repo folder is retained on disk but is no longer the origin for any active repo.
 
 ### Branch model — development/presepi-site (site code)
 ```
