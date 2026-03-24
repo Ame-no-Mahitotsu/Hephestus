@@ -245,6 +245,39 @@ python --version   # must show 3.14.3
 
 **Rule:** If you are about to run `python`, `pytest`, `ticket.py`, or any other Python command, check that the venv is active first. If it is not, activate it. Never run Python commands against the system interpreter.
 
+### cd && chaining — prohibited
+
+**Never chain a `cd` with `&&` to run an auto-approved command.** The VSCode `settings.json` auto-approve rules match against the full command string using exact regex patterns (e.g. `^python ticket\.py`, `^git`). A command that starts with `cd` never matches those patterns — the Owner approval prompt fires unexpectedly and breaks automation.
+
+**Prohibited pattern — do not do this:**
+```bash
+# BAD — the full string starts with "cd", not "python"
+cd c:/temp/ClaudeProjects/development/tools && python ticket.py list
+
+# BAD — the full string starts with "cd", not "git"
+cd c:/temp/ClaudeProjects/hephestus && git status
+```
+
+**Permitted alternative 1 — use the absolute path directly (preferred):**
+```bash
+# GOOD — command starts with "python", regex matches, auto-approved
+python c:/temp/ClaudeProjects/development/tools/ticket.py list
+
+# GOOD — git works from any directory with --git-dir or -C
+git -C c:/temp/ClaudeProjects/hephestus status
+```
+
+**Permitted alternative 2 — run `cd` as a separate Bash call, then run the command in a subsequent call:**
+```bash
+# Step 1 (separate Bash call)
+cd c:/temp/ClaudeProjects/development/tools
+
+# Step 2 (separate Bash call — now starts with "python", auto-approved)
+python ticket.py list
+```
+
+**Applies to all auto-approved commands without exception:** `ticket.py`, `handoff.py`, `message.py`, `git`, `pytest`, and any other command covered by an auto-approve rule. There are no exemptions.
+
 ---
 
 ## Testing Standards
