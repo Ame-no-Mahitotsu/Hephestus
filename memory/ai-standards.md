@@ -245,6 +245,60 @@ python --version   # must show 3.14.3
 
 **Rule:** If you are about to run `python`, `pytest`, `ticket.py`, or any other Python command, check that the venv is active first. If it is not, activate it. Never run Python commands against the system interpreter.
 
+### cd && chaining — prohibited
+
+**Never write `cd /path && command` as a single shell string.** In both Claude Code Bash tool calls and VSCode terminal sessions, this pattern breaks auto-approval because the auto-approve rules match on command string prefix — a string starting with `cd` never matches `^python ticket.py` or `^git`.
+
+**Prohibited pattern — do not do this:**
+```bash
+# BAD — the full string starts with "cd", not "python"
+cd c:/temp/ClaudeProjects/development/tools && python ticket.py list
+
+# BAD — the full string starts with "cd", not "git"
+cd c:/temp/ClaudeProjects/hephestus && git status
+```
+
+#### Claude Code Bash tool
+
+cwd does **not** persist between separate Bash tool calls. Each invocation resets to the session default cwd — a `cd` in one Bash call has no effect on any subsequent call. Use a **single Bash call with two lines** — no `&&`:
+
+```bash
+# BAD — two separate Bash calls; the cd in call 1 is lost before call 2 runs
+# Call 1:
+cd c:/temp/ClaudeProjects/development/tools
+# Call 2 (cwd already reset — cd above had no effect):
+python ticket.py list
+```
+
+```bash
+# GOOD — single Bash call, two lines; one shell process, cd on line 1 affects line 2
+cd c:/temp/ClaudeProjects/development/tools
+python ticket.py list
+```
+
+This is **one Bash tool invocation** with two lines in its body — not two separate calls.
+
+#### VSCode terminal (Copilot / Arale)
+
+cwd **does** persist between separate terminal commands in the same session. Run the `cd` as a first terminal command; run the actual command as a second terminal command — two separate calls, cwd carries over:
+
+```bash
+# BAD — single chained string; starts with "cd", never matches auto-approve prefix
+cd c:/temp/ClaudeProjects/development/tools && python ticket.py list
+```
+
+```bash
+# GOOD — two separate terminal commands; cwd persists between them
+# Terminal command 1:
+cd c:/temp/ClaudeProjects/development/tools
+# Terminal command 2:
+python ticket.py list
+```
+
+The `cd` navigation commands for workspace roots are auto-approved in `settings.json` — Copilot/Arale can run the `cd` step without prompting.
+
+Applies to all auto-approved commands: `ticket.py`, `handoff.py`, `message.py`, `git`, `pytest`, and any other command on the auto-approve allowlist.
+
 ---
 
 ## Testing Standards
@@ -372,10 +426,19 @@ The standard model (G5 = Alessandro, G6 = domain specialist) creates a self-revi
 ### Sprint Close — Zero Open Ticket Check
 > Retro action reorg-1. Mandatory for all roles, every sprint.
 
-Before any sprint is closed, the responsible agent **must** run:
+Before any sprint is closed, the responsible agent **must** run the sprint check command. Use the form appropriate for your execution context:
 
+**VSCode terminal (Copilot / Arale) — two separate terminal commands:**
 ```bash
-cd development/tools
+# Terminal command 1 (cd is auto-approved; cwd persists to next command):
+cd c:/temp/ClaudeProjects/development/tools
+# Terminal command 2:
+python ticket.py sprint <sprint-name>
+```
+
+**Claude Code Bash tool — single Bash call, two lines:**
+```bash
+cd c:/temp/ClaudeProjects/development/tools
 python ticket.py sprint <sprint-name>
 ```
 
