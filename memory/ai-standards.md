@@ -247,7 +247,7 @@ python --version   # must show 3.14.3
 
 ### cd && chaining — prohibited
 
-**Never chain a `cd` with `&&` to run an auto-approved command.** The VSCode `settings.json` auto-approve rules match against the full command string using exact regex patterns (e.g. `^python ticket\.py`, `^git`). A command that starts with `cd` never matches those patterns — the Owner approval prompt fires unexpectedly and breaks automation.
+**Never chain a `cd` with `&&` to run an auto-approved command.** The VSCode `settings.json` auto-approve rules use plain string prefix match against the full command string. A command that starts with `cd` never matches those prefixes — the Owner approval prompt fires unexpectedly and breaks automation.
 
 **Prohibited pattern — do not do this:**
 ```bash
@@ -258,13 +258,15 @@ cd c:/temp/ClaudeProjects/development/tools && python ticket.py list
 cd c:/temp/ClaudeProjects/hephestus && git status
 ```
 
-**Permitted alternative 1 — use the absolute path directly (preferred):**
+**Permitted alternative 1 — activate venv first, then use the short form (preferred):**
 ```bash
-# GOOD — command starts with "python", regex matches, auto-approved
-python c:/temp/ClaudeProjects/development/tools/ticket.py list
+# GOOD — command starts with "python", prefix matches, auto-approved
+# Works because venv activation puts python on PATH and agents run from the tools directory
+python ticket.py list
 
-# GOOD — git works from any directory with --git-dir or -C
-git -C c:/temp/ClaudeProjects/hephestus status
+# GOOD — git resolves the repo root automatically by traversing parent directories
+# No path flag needed; standard git status works from any subdirectory within the repo
+git status
 ```
 
 **Permitted alternative 2 — run `cd` as a separate Bash call, then run the command in a subsequent call:**
@@ -408,6 +410,7 @@ The standard model (G5 = Alessandro, G6 = domain specialist) creates a self-revi
 Before any sprint is closed, the responsible agent **must** run:
 
 ```bash
+# Alternative 2 — separate cd step (first Bash call), then command (second Bash call)
 cd development/tools
 python ticket.py sprint <sprint-name>
 ```
