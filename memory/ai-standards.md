@@ -215,18 +215,6 @@ app_name/
 TypeScript types here must mirror Django serializer output exactly.
 Both Backend and Frontend agents are responsible for keeping them in sync.
 
-### Pattern-Fix Tickets — Search Before Close
-> Retro action reorg-1. Applies to all implementers, all languages.
-
-When a ticket asks to fix a pattern — stale paths, wrong imports, broken references, renamed symbols, or any other systemic inconsistency — the implementer **must** search for all instances of the pattern before marking the ticket done. A fix applied to one location while the same problem exists elsewhere is an incomplete fix.
-
-Required steps:
-1. Run a project-wide search using the **Grep tool** (preferred), or `grep -r` / `rg` in the terminal, for the affected pattern before starting.
-2. Fix every instance found — not just the one that triggered the ticket.
-3. Record the search command and the number of instances found in the ticket notes.
-
-A ticket that fixes one instance and misses others **does not pass G3**.
-
 ---
 
 ## Terminal and Environment Rules
@@ -423,30 +411,6 @@ The standard model (G5 = Alessandro, G6 = domain specialist) creates a self-revi
 
 **Alessandro has no gate role on his own tickets at any gate — no exceptions.**
 
-### Sprint Close — Zero Open Ticket Check
-> Retro action reorg-1. Mandatory for all roles, every sprint.
-
-Before any sprint is closed, the responsible agent **must** run the sprint check command. Use the form appropriate for your execution context:
-
-**VSCode terminal (Copilot / Arale) — three separate terminal commands:**
-```bash
-# Terminal command 1 (cd is auto-approved; cwd persists to next command):
-cd c:/temp/ClaudeProjects/development/tools
-# Terminal command 2:
-source .venv/Scripts/activate
-# Terminal command 3:
-python ticket.py sprint <sprint-name>
-```
-
-**Claude Code Bash tool — single Bash call, three lines:**
-```bash
-cd c:/temp/ClaudeProjects/development/tools
-source .venv/Scripts/activate
-python ticket.py sprint <sprint-name>
-```
-
-Confirm that zero tickets remain in an open status (`open`, `in-development`, `in-testing`, `in-refinement`, `po-acceptance`). If any open tickets are found, they must be resolved, deferred, or explicitly carried forward to the next sprint before the sprint is marked closed. Do not close a sprint with silently lingering tickets.
-
 ### Ticket notes
 Each gate transition must be recorded in the ticket notes with format:
 `YYYY-MM-DD <role>: [GATE N] <summary of what was reported and owner response>`
@@ -523,6 +487,42 @@ All CLI tools that append notes to tickets or messages must accept a `--caller` 
 ---
 
 ## Process Rules
+
+### Sprint Close — Zero Open Ticket Check
+> Retro action reorg-1. Mandatory for all roles, every sprint.
+
+Before any sprint is closed, the responsible agent **must** run the sprint check command. Use the form appropriate for your execution context:
+
+**VSCode terminal (Copilot / Arale) — three separate terminal commands:**
+```bash
+# Terminal command 1 (cd is auto-approved; cwd persists to next command):
+cd c:/temp/ClaudeProjects/development/tools
+# Terminal command 2:
+source .venv/Scripts/activate
+# Terminal command 3:
+python ticket.py sprint <sprint-name>
+```
+
+**Claude Code Bash tool — single Bash call, three lines:**
+```bash
+cd c:/temp/ClaudeProjects/development/tools
+source .venv/Scripts/activate
+python ticket.py sprint <sprint-name>
+```
+
+Confirm that zero tickets remain in an open status (`open`, `in-development`, `in-testing`, `in-refinement`, `po-acceptance`). If any open tickets are found, they must be resolved, deferred, or explicitly carried forward to the next sprint before the sprint is marked closed. Do not close a sprint with silently lingering tickets.
+
+### Pattern-Fix Tickets — Search Before Close
+> Retro action reorg-1. Applies to all implementers, all languages.
+
+When a ticket asks to fix a pattern — stale paths, wrong imports, broken references, renamed symbols, or any other systemic inconsistency — the implementer **must** search for all instances of the pattern before marking the ticket done. A fix applied to one location while the same problem exists elsewhere is an incomplete fix.
+
+Required steps:
+1. Run a project-wide search using the **Grep tool** (preferred), or `grep -r` / `rg` in the terminal, for the affected pattern before starting.
+2. Fix every instance found — not just the one that triggered the ticket.
+3. Record the search command and the number of instances found in the ticket notes.
+
+A ticket that fixes one instance and misses others **does not pass G3**.
 
 ### DevOps / Infra Sprints — Smoke-Test Command Required
 > Retro action reorg-1. Applies to all infrastructure and devops sprints.
