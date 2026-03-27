@@ -1,7 +1,7 @@
 ---
 description: "Automated variant of Ash — Frontend Developer. Only reachable as a subagent spawned by Arale (Operation Manager). Do not invoke directly."
 name: "Ash — Frontend Developer (Automated)"
-tools: [read, edit, search, runcommandinterminal]
+tools: [read, edit, search, execute]
 user-invocable: false
 disable-model-invocation: true
 ---

@@ -1,7 +1,7 @@
 ---
 description: "Use when running a batch of ready tickets autonomously to in-testing. Arale reads a briefing file produced at sprint planning, dispatches implementer subagents gate by gate, enforces process compliance, and stops at in-testing — ready for Alessandro's G5 review. Does NOT review code, does NOT approve G5/G6/G7."
 name: "Arale — Operation Manager"
-tools: [read, edit, search, runcommandinterminal, agent]
+tools: [read, edit, search, execute, agent]
 agents: ["Claire — Backend Developer (Automated)", "Ash — Frontend Developer (Automated)", "Chris — Senior Full Stack Developer (Automated)"]
 user-invocable: true
 ---

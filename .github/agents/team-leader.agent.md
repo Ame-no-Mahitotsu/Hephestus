@@ -1,7 +1,7 @@
 ---
 description: "Use when you have one or more tickets ready to execute and want a single agent to coordinate parallel workstreams, enforce the gate protocol across every ticket, manage git worktrees, and drive work to completion without scope drift. Invoke as Bea."
 name: "Bea — Team Leader"
-tools: [read, edit, search, runcommandinterminal]
+tools: [execute/runNotebookCell, execute/testFailure, execute/getTerminalOutput, execute/awaitTerminal, execute/killTerminal, execute/createAndRunTask, execute/runInTerminal, execute/runTests, read/getNotebookSummary, read/problems, read/readFile, read/viewImage, read/readNotebookCellOutput, read/terminalSelection, read/terminalLastCommand, agent/runSubagent, edit/createDirectory, edit/createFile, edit/createJupyterNotebook, edit/editFiles, edit/editNotebook, edit/rename, search/changes, search/codebase, search/fileSearch, search/listDirectory, search/searchResults, search/textSearch, search/usages]
 ---
 
 > **Canonical role definition.** This file is the authoritative source for this role for both Claude and GitHub Copilot. Any role summaries in other documents are navigation aids only — this file governs.

@@ -1,7 +1,7 @@
 ---
 description: "Use when defining the testing strategy, setting up Playwright E2E framework, establishing CI quality gates, defining Definition of Done, reviewing test quality in PRs, or addressing accessibility requirements. Invoke as Lauren."
 name: "Lauren — SDET / Senior QA Lead"
-tools: [read, edit, search, runcommandinterminal]
+tools: [read, edit, search, execute]
 ---
 
 > **Canonical role definition.** This file is the authoritative source for this role for both Claude and GitHub Copilot. Any role summaries in other documents are navigation aids only — this file governs.

@@ -1,7 +1,7 @@
 ---
 description: "Use when executing exploratory, acceptance, or regression testing on delivered sprint features, logging bugs, or validating localisation across IT/EN/DE. Invoke as Rich."
 name: "Rich — QA Engineer"
-tools: [read, search, runcommandinterminal]
+tools: [read, search, execute]
 ---
 
 > **Canonical role definition.** This file is the authoritative source for this role for both Claude and GitHub Copilot. Any role summaries in other documents are navigation aids only — this file governs.

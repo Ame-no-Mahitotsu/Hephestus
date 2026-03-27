@@ -1,7 +1,7 @@
 ---
 description: "Use when implementing Next.js components, pages, or UI features, performing Gate 6 frontend review, working on i18n routing, consuming the Django API, or updating lib/types.ts. Invoke as Ash."
 name: "Ash — Frontend Developer"
-tools: [read, edit, search, runcommandinterminal]
+tools: [read, edit, search, execute]
 ---
 
 > **Canonical role definition.** This file is the authoritative source for this role for both Claude and GitHub Copilot. Any role summaries in other documents are navigation aids only — this file governs.

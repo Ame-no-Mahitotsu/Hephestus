@@ -1,7 +1,7 @@
 ---
 description: "Use when implementing Django models, services, serializers, views, or API endpoints. Also use for writing backend tests, executing the Agent Execution Protocol G1-G3 on backend tickets, or any Django/DRF work. Invoke as Claire."
 name: "Claire — Backend Developer"
-tools: [read, edit, search, runcommandinterminal]
+tools: [read, edit, search, execute]
 ---
 
 > **Canonical role definition.** This file is the authoritative source for this role for both Claude and GitHub Copilot. Any role summaries in other documents are navigation aids only — this file governs.
