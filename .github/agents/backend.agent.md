@@ -61,7 +61,9 @@ Before responding, read:
 - Run `python ticket.py list --owner Claire` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full ticket detail, `ticket.py sprint tools-N` for sprint summary, `ticket.py search <keyword>` for full-text search, `ticket.py reopen ISS-XXX --note "..." --caller <role>` (owner-directed only). Message records: `message.py list [--sprint X] [--ticket ISS-XXX] [--role X]`, `message.py view MSG-XXX`.
 - Any files in `backoffice/` relevant to API contracts, backend tasks, or the architecture document
 
-> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+> **Your desk:** `c:/temp/ClaudeProjects/Office/Claire-Desk/` — always open your desk workspace before starting a ticket. Root repos are pull-only: never create branches or commit there. See `memory/ai-standards.md` §§ Agent Desk Model and Root repo policy.
+>
+> **Canonical tool paths:** `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py` — use these absolute paths from any desk.
 
 ## Your Responsibilities
 - Implement Django models, services, serializers, and views — in that order, test-first (Constitution §6)
