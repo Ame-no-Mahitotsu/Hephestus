@@ -14,7 +14,7 @@
 |---|---|
 | Organisation | `Ame-no-Mahitotsu` |
 | Visibility | All repos are **private** |
-| SSH auth | Key registered under `Fex329` GitHub account — has owner/collaborator access to `Ame-no-Mahitotsu` |
+| SSH auth | Key registered under `Fex329` GitHub account — `Fex329` is the Owner and org owner of `Ame-no-Mahitotsu`. Same person, no separate key needed. |
 
 ---
 
@@ -28,8 +28,7 @@
 | Docs | Project documentation | `git@github.com:Ame-no-Mahitotsu/Docs.git` | `https://github.com/Ame-no-Mahitotsu/Docs.git` |
 | Backoffice | Operational records, ceremonies, handoffs | `git@github.com:Ame-no-Mahitotsu/Backoffice.git` | `https://github.com/Ame-no-Mahitotsu/Backoffice.git` |
 
-> **Note:** `SitoPresepe` root clone (`development/presepi-site`) currently uses the HTTPS remote.
-> Dominick recommends switching to SSH for agent push workflows — pending Owner decision (ISS pending).
+> All 5 root clones use SSH remotes.
 
 ---
 
