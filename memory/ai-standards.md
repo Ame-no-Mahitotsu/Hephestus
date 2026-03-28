@@ -131,6 +131,43 @@ All 5 repos use `origin` pointing to GitHub (SSH). The `repos\` bare repo folder
 
 Each desk contains full git clones of scoped repos. Each desk has a `{AgentName}-Desk.code-workspace` file. The `Office\` folder is not itself a git repo.
 
+### Agent Desk Model
+> Established ISS-176/ISS-177, 2026-03-28.
+
+#### Starting a ticket from your desk
+1. Open your desk workspace: `Office/{AgentName}-Desk/{AgentName}-Desk.code-workspace`
+2. In the relevant repo clone, pull the base branch:
+   ```
+   git checkout main && git pull origin main        # hephestus, tools, docs, backoffice
+   git checkout develop && git pull origin develop  # presepi-site
+   ```
+3. Create the feature branch:
+   ```
+   git checkout -b feature/iss-NNN-short-description
+   ```
+4. Work the ticket gate-by-gate (G1 → G2 → G3).
+5. Commit all changes and push:
+   ```
+   git push -u origin feature/iss-NNN-short-description
+   ```
+6. Post the branch name in your G3 note — Bea/Owner creates the PR. Owner merges after G5 + G6 are both acknowledged.
+
+#### Canonical tool paths (all agents, all desks)
+```
+python c:/temp/ClaudeProjects/development/tools/ticket.py <subcommand>
+python c:/temp/ClaudeProjects/development/tools/message.py <subcommand>
+```
+All agents use this fixed absolute path regardless of desk. Some desks (e.g. Ash-Desk) do not contain a `tools` clone — use the canonical path above, not a relative path from your desk.
+
+#### Chained tickets (same files, sequential)
+Branch ticket N from ticket N-1's feature branch — not from `main` or `develop`:
+```
+feature/iss-067-...              ← ticket 1: branched from main
+  └── feature/iss-071-...        ← ticket 2: branched from iss-067 (not from main)
+       └── feature/iss-072-...   ← ticket 3: branched from iss-071
+```
+State the base branch explicitly in your G1 note.
+
 ### Branch model — development/presepi-site (site code)
 ```
 main        Production only. Tagged on every deployment.

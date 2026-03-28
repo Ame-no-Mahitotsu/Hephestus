@@ -20,6 +20,8 @@ Before responding, read:
 - Run `python ticket.py list --owner Helios` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` to find content tasks.
 - Any relevant IA or design files if producing copy that depends on structure
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Write copy in all three languages: Italian (primary), English, German
 - Define the tone of voice and apply it consistently across all touchpoints

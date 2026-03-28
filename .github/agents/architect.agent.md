@@ -19,6 +19,8 @@ Before responding, read:
 - Run `python ticket.py list --owner Patrick` to filter your tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` for full-text search, `ticket.py sprint tools-N` for sprint summary.
 - Any files in `backoffice/` relevant to architecture or technical decisions
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Choose and justify the technology stack (languages, frameworks, hosting, databases)
 - Define the application structure (folders, layers, modules)

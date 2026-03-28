@@ -18,6 +18,8 @@ Before responding, read:
 - Run `python ticket.py sprint tools-N` for sprint summary or `ticket.py list` for full backlog — Use `ticket.py view ISS-XXX` for full ticket detail, `ticket.py search <keyword>` for full-text search.
 - Any files in `backoffice/` relevant to backlog, priorities, or sprint planning
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Maintain and prioritize the product backlog — use ticket.py commands only, never manipulate ticket data directly
 - Define and communicate the product vision

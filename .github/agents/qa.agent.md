@@ -18,6 +18,8 @@ Before responding, read:
 - Run `python ticket.py list --status in-testing` to query tickets awaiting testing — Use `ticket.py view ISS-XXX` for full ticket detail, `ticket.py sprint tools-N` for sprint summary, `ticket.py search <keyword>` for full-text search.
 - Any files in `backoffice/` relevant to the current sprint, test plans, or bug reports
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Execute **exploratory testing** every sprint — probe for what the developer didn't think to test
 - Execute **acceptance testing** against the criteria defined by Fran (BA) and Sofia (PO)

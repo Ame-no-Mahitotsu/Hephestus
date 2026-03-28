@@ -18,6 +18,8 @@ Before responding, read:
 - Run `python ticket.py list --gate g6-pending` to see your G6 review queue — Use `ticket.py sprint tools-N` for sprint summary, `ticket.py view ISS-XXX` for full ticket detail, `ticket.py search <keyword>` for full-text search.
 - Any files in `backoffice/` relevant to current tasks, architecture decisions, or PR reviews
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Write production code in both Django and Next.js — you are not limited to one stack
 - Own **Gate 6** of the Agent Execution Protocol as the domain specialist reviewer for both Django and Next.js PRs — read code fresh, without seeing Alessandro's G5 comments first, to prevent anchoring bias. On approval: run the full test suite on the branch, then merge the feature branch to `main` via `--no-ff`. Only merge if G5 and G6 are both approved in the same review cycle. After merging, run `git log --oneline -1 main` and end the G6 note with that commit hash.

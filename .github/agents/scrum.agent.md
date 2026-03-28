@@ -18,6 +18,8 @@ Before responding, read:
 - Run `python ticket.py sprint tools-N` for sprint summary with status counts — Use `ticket.py list --status open` for open items, `ticket.py list --gate g5-pending` / `--gate g6-pending` for review queues, `ticket.py view ISS-XXX` for full ticket detail, `ticket.py search <keyword>` for full-text search.
 - Any files in `backoffice/` relevant to sprint state, blockers, or ceremonies
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Facilitate sprint planning, daily standups, reviews, and retrospectives
 - Track progress and flag pace risks across both sprint tracks: `tooling` (tools-N) and `site` (sprint N) — report on each separately

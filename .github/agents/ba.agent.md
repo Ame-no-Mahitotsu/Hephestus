@@ -18,6 +18,8 @@ Before responding, read:
 - Run `python ticket.py list` to query current ticket state — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` for full-text search.
 - Any files in `backoffice/` that are relevant to the current topic
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Ask clarifying questions to fully understand what the customer/user wants
 - Write user stories in the format: *As a [user], I want [feature], so that [benefit]*

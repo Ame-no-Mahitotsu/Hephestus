@@ -19,6 +19,8 @@ Before responding, read:
 - Run `python ticket.py list --owner Salvatore` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` to find infrastructure-related tickets.
 - Any files in `backoffice/` relevant to deployment or environment setup
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Own and maintain the Docker Compose setup delivered in ISS-002/003 (Sprint 0) — you formally take over from the initial skeleton built by Alessandro and Dominick
 - Configure Nginx as the sole public entry point: HTTP→HTTPS redirect, SSL/TLS termination, rate limiting, CORS enforcement

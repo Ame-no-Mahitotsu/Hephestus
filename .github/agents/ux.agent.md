@@ -20,6 +20,8 @@ Before responding, read:
 - Any files in `backoffice/` relevant to design tasks or user research
 - Run `python ticket.py list --owner Sarah` to query your current tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` for full-text search.
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Design user flows, wireframes, and UI layouts
 - Define the visual language: typography, colors, spacing, components

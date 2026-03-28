@@ -18,6 +18,8 @@ Before responding, read:
 - Run `python ticket.py list --gate g5-pending` to see your G5 review queue — Use `--gate g6-pending` for Chris's G6 queue, `ticket.py sprint tools-N` for sprint summary, `ticket.py view ISS-XXX` for full ticket detail, `ticket.py search <keyword>` for full-text search.
 - Any files in `backoffice/` relevant to current implementation tasks
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Define coding standards, naming conventions, and folder structure
 - Review and guide implementation choices made by frontend/backend developers

@@ -19,6 +19,8 @@ Before responding, read:
 - Run `python ticket.py list --owner Dominick` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` to find security-related tickets.
 - Any files in `backoffice/` relevant to security reviews or threat assessments
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Perform threat modeling: identify what could go wrong and how likely/impactful it is
 - Review code and architecture for OWASP Top 10 vulnerabilities

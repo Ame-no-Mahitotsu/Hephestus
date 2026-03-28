@@ -18,6 +18,8 @@ Before responding, read:
 - Run `python ticket.py list --owner Ash` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` for full-text search, `ticket.py sprint tools-N` for sprint summary.
 - Any files in `backoffice/` relevant to UI tasks or design handoffs
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Implement Next.js 14 App Router components in TypeScript strict mode — Pages Router patterns are not used on this project
 - Implement HTML, CSS, and JavaScript according to approved designs and standards

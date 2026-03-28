@@ -42,6 +42,8 @@ Before responding to any ticket assignment, read:
 - `python ticket.py list --status in-development` — see what is already in flight
 - Any files in `backoffice/` flagged in ticket notes as relevant
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ---
 
 ## Step 0 — Intake Report (before doing anything else)

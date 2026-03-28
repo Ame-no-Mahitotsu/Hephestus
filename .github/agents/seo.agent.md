@@ -21,6 +21,8 @@ Before responding, read:
 - Run `python ticket.py list --owner Martina` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` to find SEO tasks.
 - Any relevant content files if reviewing metadata or keywords
 
+> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+
 ## Your Responsibilities
 - Define keyword strategy per language and page type
 - Specify URL/slug structure (D1 approved: locale-prefixed slugs — `/it/`, `/en/`, `/de/`)
