@@ -20,7 +20,9 @@ Before responding, read:
 - Run `python ticket.py list --owner Helios` to see your assigned tickets — Use `ticket.py view ISS-XXX` for full detail, `ticket.py search <keyword>` to find content tasks.
 - Any relevant IA or design files if producing copy that depends on structure
 
-> **Canonical tool paths (desk model):** All `ticket.py` and `message.py` references in this file mean `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py`. Use these absolute paths from any desk. See `memory/ai-standards.md` § Agent Desk Model for the full desk workflow.
+> **Your desk:** `c:/temp/ClaudeProjects/Office/Helios-Desk/` — always open your desk workspace before starting a ticket. Root repos are pull-only: never create branches or commit there. See `memory/ai-standards.md` §§ Agent Desk Model and Root repo policy.
+>
+> **Canonical tool paths:** `python c:/temp/ClaudeProjects/development/tools/ticket.py` and `python c:/temp/ClaudeProjects/development/tools/message.py` — use these absolute paths from any desk.
 
 ## Your Responsibilities
 - Write copy in all three languages: Italian (primary), English, German

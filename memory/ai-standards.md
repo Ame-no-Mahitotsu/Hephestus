@@ -162,6 +162,25 @@ Each desk contains full git clones of scoped repos. Each desk has a `{AgentName}
    ```
 6. Post the branch name in your G3 note — Bea/Owner creates the PR. Owner merges after G5 + G6 are both acknowledged.
 
+#### Root repo policy — pull-only (ISS-182, 2026-03-28)
+
+The root repo clones at `c:\temp\ClaudeProjects\` are **pull-only**:
+
+| Root path | Repo |
+|---|---|
+| `c:\temp\ClaudeProjects\hephestus\` | Hephestus |
+| `c:\temp\ClaudeProjects\backoffice\` | Backoffice |
+| `c:\temp\ClaudeProjects\docs\` | Docs |
+| `c:\temp\ClaudeProjects\development\tools\` | Tools |
+| `c:\temp\ClaudeProjects\development\presepi-site\` | SitoPresepe |
+
+**Rules — no exceptions:**
+- **Never create a branch in a root repo.** Feature branches belong in your desk clone only.
+- **Never stage or commit in a root repo.** All development work happens in `Office/{AgentName}-Desk/`.
+- **One permitted write at root:** `git pull origin main` (or `develop` for presepi-site) at session start to stay current with released work.
+
+If you find yourself in a root repo with uncommitted changes, on a feature branch, or with a dirty working tree — you are in the wrong repo. Stop, open your desk workspace, and continue there.
+
 #### Canonical tool paths (all agents, all desks)
 ```
 python c:/temp/ClaudeProjects/development/tools/ticket.py <subcommand>
