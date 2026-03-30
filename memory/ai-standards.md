@@ -518,6 +518,8 @@ python ticket.py update ISS-XXX --field notes \
   --value "<existing notes> | YYYY-MM-DD <role>: [GATE N] <new entry>"
 ```
 
+**No gate-output files.** Gate content goes directly into ticket notes — the `[GATE N]` format is the complete record. Do not create files in `backoffice/gate-output/`. The directory exists as a historical archive; nothing new is written there. If a gate review is too long to summarise in a ticket note, the review is over-engineered — tighten it. (ISS-189, approved 2026-03-30)
+
 ---
 
 ## Session File Standard
